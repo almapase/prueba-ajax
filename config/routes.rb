@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'companies#index'
+
   resources :claims
   devise_for :users
   resources :companies
