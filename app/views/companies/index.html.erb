@@ -1,28 +1,24 @@
+<div class="row">
+  <h1>New Company</h1>
+  <div class="col-md-6">
+    <%= render 'form' %>
+  </div>
+</div>
+<div class="row">
+  <h1>Listing Companies</h1>
 
-<h1>Listing Companies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @companies.each do |company| %>
+  <table class="table" id="companies">
+    <thead>
       <tr>
-        <td><%= company.name %></td>
-        <td><%= company.description %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th colspan="3">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Company', new_company_path %>
+    <tbody>
+      <%= render @companies %>
+    </tbody>
+  </table>
+</div>
+<%= render 'modal_edit' %>

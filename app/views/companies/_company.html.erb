@@ -1,0 +1,18 @@
+<tr id="company-<%=company.id%>">
+  <td id="name"><%= company.name %></td>
+  <td id="description"><%= company.description %></td>
+  <td><%= link_to 'Show', company %></td>
+  <td>
+    <%= link_to 'Edit',
+                edit_company_path(company),
+                data: { disable_with: 'Wait...' },
+                remote: true %>
+  </td>
+  <td>
+    <%= link_to 'Destroy',
+                company,
+                method: :delete,
+                data: { disable_with: 'Wait...' },
+                remote: true %>
+  </td>
+</tr>
