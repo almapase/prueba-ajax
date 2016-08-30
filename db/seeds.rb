@@ -22,3 +22,4 @@ end
 250.times do |i|
   Claim.create!(description: "reclamo-#{i+1}", user: users.sample, company: companies.sample)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
