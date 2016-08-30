@@ -7,26 +7,34 @@
   <strong>Description:</strong>
   <%= @company.description %>
 </p>
+<div class="row">
+  <div class="col-md-6">
+    <h1>New Claim</h1>
 
-<h1>New Claim</h1>
+    <%= render 'claims/form' %>
 
-<%= render 'claims/form' %>
+    <h1>Listing Claims</h1>
 
-<h1>Listing Claims</h1>
+    <table class="table" id="claims">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>User</th>
+        </tr>
+      </thead>
 
-<table class="table" id="claims">
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>User</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @claims%>
-  </tbody>
-</table>
+      <tbody>
+        <%= render @claims%>
+      </tbody>
+    </table>
 
 
-<br>
-<%= link_to 'Back', companies_path %>
+    <br>
+    <%= link_to 'Back', companies_path %>
+  </div>
+  <div class="col-md-6">
+    <h2>Claims per Day</h2>
+    <h4>Total of Claims: <%=@claims.count%> </h4>
+    <%= line_chart @clains_per_day %>
+  </div>
+</div>

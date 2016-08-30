@@ -7,12 +7,14 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
     @company = Company.new
+    @Companies_most_ten_claims = Company.claims_by_company.first(10)
   end
 
   # GET /companies/1
   # GET /companies/1.json
   def show
     @claims = Claim.joins(:company).where("companies.id = ?", params[:id])
+    @clains_per_day = @claims.group_by_day(:"claims.created_at").count
     @claim = Claim.new
   end
 
