@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem "chartkick"
 gem 'groupdate'
+gem 'activeadmin', github: 'activeadmin'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
