@@ -1,14 +1,32 @@
-
-
-<p>
-  <strong>Name:</strong>
+<h1>
+  <strong>Company:</strong>
   <%= @company.name %>
-</p>
+</h1>
 
 <p>
   <strong>Description:</strong>
   <%= @company.description %>
 </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
+<h1>New Claim</h1>
+
+<%= render 'claims/form' %>
+
+<h1>Listing Claims</h1>
+
+<table class="table" id="claims">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @claims%>
+  </tbody>
+</table>
+
+
+<br>
 <%= link_to 'Back', companies_path %>

@@ -1,0 +1,4 @@
+<tr id="claim-<%=claim.id%>">
+  <td id="description"><%= claim.description %></td>
+  <td id="user"><%= claim.user.try(:email) %></td>
+</tr>

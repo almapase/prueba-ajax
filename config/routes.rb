@@ -2,9 +2,12 @@ Rails.application.routes.draw do
 
   root 'companies#index'
 
-  resources :claims
   devise_for :users
-  resources :companies
+
+  resources :companies do
+    resources :claims
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
